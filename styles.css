@@ -1,0 +1,360 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Inter', sans-serif;
+}
+
+body {
+    background-color: #36393f;
+    color: #dcddde;
+    height: 100vh;
+    overflow: hidden;
+}
+
+.app-container {
+    display: flex;
+    height: 100vh;
+}
+
+/* Sidebar Styles */
+.sidebar {
+    width: 240px;
+    background-color: #2f3136;
+    display: flex;
+    flex-direction: column;
+    padding: 16px 8px;
+}
+
+.server-header {
+    padding: 0 16px;
+    margin-bottom: 24px;
+}
+
+.server-header h1 {
+    color: #ffffff;
+    font-size: 20px;
+    font-weight: 700;
+    margin-bottom: 4px;
+}
+
+.subtitle {
+    color: #8e9297;
+    font-size: 14px;
+}
+
+.online-users {
+    padding: 16px;
+    background-color: #292b2f;
+    border-radius: 8px;
+    margin-bottom: 16px;
+}
+
+.online-users h3 {
+    color: #ffffff;
+    font-size: 14px;
+    margin-bottom: 8px;
+}
+
+.user-count {
+    color: #8e9297;
+    font-size: 14px;
+    display: flex;
+    align-items: center;
+}
+
+.user-count i {
+    color: #3ba55c;
+    font-size: 10px;
+    margin-right: 6px;
+}
+
+.fun-facts {
+    padding: 16px;
+    background-color: #292b2f;
+    border-radius: 8px;
+    margin-bottom: 16px;
+}
+
+.fun-facts h3 {
+    color: #ffffff;
+    font-size: 14px;
+    margin-bottom: 8px;
+}
+
+.fun-facts p {
+    color: #8e9297;
+    font-size: 14px;
+    line-height: 1.4;
+}
+
+.user-info {
+    display: flex;
+    align-items: center;
+    padding: 8px;
+    background-color: #292b2f;
+    border-radius: 4px;
+    margin-top: auto;
+}
+
+.avatar {
+    width: 32px;
+    height: 32px;
+    background-color: #5865f2;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-right: 8px;
+}
+
+.username {
+    font-size: 14px;
+    font-weight: 500;
+}
+
+.online-list-container {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    margin-top: 16px;
+    margin-bottom: 16px;
+    min-height: 0;
+    background-color: #232428;
+    border-radius: 12px;
+    padding: 16px 0 8px 0;
+    box-shadow: 0 2px 8px 0 rgba(0,0,0,0.04);
+}
+
+.online-list-container h3 {
+    color: #ffffff;
+    font-size: 14px;
+    margin-bottom: 8px;
+    padding-left: 16px;
+}
+
+.online-list {
+    flex: 1;
+    overflow-y: auto;
+    background: transparent;
+    border-radius: 8px;
+    padding: 0 8px 0 16px;
+    max-height: 100%;
+}
+
+.online-user {
+    display: flex;
+    align-items: center;
+    padding: 6px 0;
+    color: #b9bbbe;
+    font-size: 15px;
+    border-bottom: 1px solid #232428;
+    word-break: break-all;
+}
+.online-user:last-child {
+    border-bottom: none;
+}
+
+/* Chat Area Styles */
+.chat-area {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    background-color: #36393f;
+}
+
+.chat-header {
+    padding: 16px;
+    border-bottom: 1px solid #202225;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.chat-header h2 {
+    color: #ffffff;
+    font-size: 16px;
+    font-weight: 600;
+}
+
+.chat-info {
+    display: flex;
+    align-items: center;
+    color: #8e9297;
+    font-size: 14px;
+}
+
+.online-indicator {
+    width: 8px;
+    height: 8px;
+    background-color: #3ba55c;
+    border-radius: 50%;
+    margin-right: 6px;
+}
+
+.messages {
+    flex: 1;
+    padding: 16px;
+    overflow-y: auto;
+}
+
+.message {
+    margin-bottom: 16px;
+    display: flex;
+    align-items: flex-start;
+}
+
+.message.own-message {
+    flex-direction: row-reverse;
+}
+
+.message.own-message .message-content {
+    margin-left: 0;
+    margin-right: 16px;
+    text-align: right;
+}
+
+.message.own-message .message-header {
+    flex-direction: row-reverse;
+}
+
+.message.own-message .message-author {
+    margin-right: 0;
+    margin-left: 8px;
+}
+
+.system-message {
+    justify-content: center;
+    margin: 24px 0;
+}
+
+.system-message .message-content {
+    background-color: #292b2f;
+    padding: 12px 16px;
+    border-radius: 8px;
+    text-align: center;
+}
+
+.system-message .message-text {
+    color: #8e9297;
+    font-size: 14px;
+}
+
+.system-message .message-text small {
+    display: block;
+    margin-top: 8px;
+    color: #72767d;
+}
+
+.message-content {
+    margin-left: 16px;
+    max-width: 70%;
+    word-break: break-word;
+    overflow-wrap: anywhere;
+}
+
+.message-header {
+    display: flex;
+    align-items: baseline;
+    margin-bottom: 4px;
+}
+
+.message-author {
+    font-weight: 500;
+    color: #ffffff;
+    margin-right: 8px;
+}
+
+.message-time {
+    font-size: 12px;
+    color: #72767d;
+}
+
+.message-text {
+    color: #dcddde;
+    line-height: 1.4;
+    word-wrap: break-word;
+    max-width: 100%;
+    overflow-wrap: anywhere;
+}
+
+.message-input {
+    padding: 0 0 16px 0;
+    background-color: transparent;
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+#message-form {
+    display: flex;
+    align-items: center;
+    background-color: #292b2f;
+    border-radius: 12px;
+    box-shadow: 0 2px 8px 0 rgba(0,0,0,0.08);
+    border: 1px solid #232428;
+    padding: 0 12px;
+    min-height: 44px;
+    width: 100%;
+    max-width: 1300px;
+    margin: 0 32px;
+}
+
+#message-input {
+    flex: 1;
+    background: none;
+    border: none;
+    color: #dcddde;
+    padding: 10px 0;
+    font-size: 15px;
+    outline: none;
+    min-height: 32px;
+    max-height: 80px;
+}
+
+#message-input::placeholder {
+    color: #72767d;
+}
+
+#message-form button {
+    background: none;
+    border: none;
+    color: #72767d;
+    cursor: pointer;
+    padding: 8px 8px 8px 12px;
+    transition: color 0.2s;
+    font-size: 18px;
+    display: flex;
+    align-items: center;
+}
+
+#message-form button:hover {
+    color: #dcddde;
+}
+
+/* Scrollbar Styles */
+::-webkit-scrollbar {
+    width: 8px;
+}
+
+::-webkit-scrollbar-track {
+    background: #2f3136;
+}
+
+::-webkit-scrollbar-thumb {
+    background: #202225;
+    border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: #40444b;
+}
+
+@media (max-width: 1000px) {
+    #message-form {
+        max-width: 98vw;
+        margin: 0 8px;
+    }
+} 

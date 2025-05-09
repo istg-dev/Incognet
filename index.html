@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Incognet Chat</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <!-- Firebase SDK -->
+    <script src="https://www.gstatic.com/firebasejs/10.8.0/firebase-app-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/10.8.0/firebase-firestore-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/10.8.0/firebase-auth-compat.js"></script>
+</head>
+<body>
+    <div class="app-container">
+        <!-- Sidebar -->
+        <div class="sidebar">
+            <div class="server-header">
+                <h1>Incognet</h1>
+                <p class="subtitle">Where everyone is a mystery</p>
+                <p class="subtitle" style="font-size:12px; color:#8e9297; margin-top:2px;">incognet.space</p>
+            </div>
+            <div class="online-users">
+                <h3>Online Now</h3>
+                <div class="user-count">
+                    <i class="fas fa-circle"></i>
+                    <span id="user-count">1</span>
+                </div>
+            </div>
+            <div class="fun-facts">
+                <h3>Did You Know?</h3>
+                <p id="fun-fact">Loading fun fact...</p>
+            </div>
+            <div class="online-list-container">
+                <h3>People Online</h3>
+                <div class="online-list" id="online-list"></div>
+            </div>
+            <div class="user-info">
+                <div class="avatar">
+                    <i class="fas fa-user"></i>
+                </div>
+                <div class="username">
+                    <span id="anonymous-name">Loading...</span>
+                </div>
+            </div>
+        </div>
+
+        <!-- Main Chat Area -->
+        <div class="chat-area">
+            <div class="chat-header">
+                <h2>Incognet Chat</h2>
+                <div class="chat-info">
+                    <span class="online-indicator"></span>
+                    <span>Live Chat</span>
+                </div>
+            </div>
+            <div class="messages" id="messages">
+                <!-- Welcome message -->
+                <div class="message system-message">
+                    <div class="message-content">
+                        <div class="message-text">
+                            Welcome to Anonymouse Chat! Your identity is hidden, but your words are heard.
+                            <br>
+                            <small>Try using emojis like :) :D <3</small>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="message-input">
+                <form id="message-form" onsubmit="return false;">
+                    <input type="text" id="message-input" placeholder="Type a message..." autocomplete="off">
+                    <button type="submit">
+                        <i class="fas fa-paper-plane"></i>
+                    </button>
+                </form>
+            </div>
+        </div>
+    </div>
+    <script src="firebase-config.js"></script>
+    <script src="script.js"></script>
+</body>
+</html> 
